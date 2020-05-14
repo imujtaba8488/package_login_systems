@@ -1,10 +1,19 @@
 import 'package:flutter/material.dart';
 
 class GreyLoginSystem extends StatefulWidget {
+  /// Adds validation to email / password field.
   final Validator emailValidator, passwordValidator;
-  final OnLoginPressed onLoginPressed;
+
+  /// Action to be taken when the signIn button is pressed.
+  final OnSignInPressed onSignInPressed;
+
+  /// Action to be taken when the submit button is pressed.
   final OnSubmitPressed onSubmitPressed;
+
+  /// Action to be taken when the link button is pressed.
   final Function onLinkPressed;
+
+  /// Text that should appear in the field.
   final String signInText,
       submitText,
       linkText,
@@ -12,7 +21,7 @@ class GreyLoginSystem extends StatefulWidget {
       signUpHeaderLabel;
 
   GreyLoginSystem({
-    this.onLoginPressed,
+    this.onSignInPressed,
     this.onSubmitPressed,
     this.onLinkPressed,
     this.emailValidator,
@@ -41,7 +50,7 @@ class _GreyLoginSystemState extends State<GreyLoginSystem> {
     // 60px for any additional padding. 
     _formHeight = MediaQuery.of(context).size.height - (_tabBarHeight + 60);
 
-    // 2.5 takes into consideration padding as well.
+    // 2.5 takes into consideration any padding as well.
     _nameFieldWidth = MediaQuery.of(context).size.width / 2.5;
 
     return DefaultTabController(
@@ -115,7 +124,7 @@ class _GreyLoginSystemState extends State<GreyLoginSystem> {
             ),
             _customizedRaisedButton(
               text: widget.signInText,
-              onPressed: _onLoginFormSaved,
+              onPressed: _onSignInFormSaved,
             ),
             _customizedLinkButton(
               text: widget.linkText,
@@ -279,17 +288,17 @@ class _GreyLoginSystemState extends State<GreyLoginSystem> {
     );
   }
 
-  /// Defines what should happen when the signInButton is pressed.
-  void _onLoginFormSaved() {
+  /// Controls how the signInForm is saved.
+  void _onSignInFormSaved() {
     if (_signInFormKey.currentState.validate()) {
       _signInFormKey.currentState.save();
-      widget.onLoginPressed != null
-          ? widget.onLoginPressed(_email, _password)
+      widget.onSignInPressed != null
+          ? widget.onSignInPressed(_email, _password)
           : print('Error: No Implementation Provided');
     }
   }
 
-  /// Defines what should happen when the signUpButton is pressed.
+  /// Controls how the signUpForm is saved.
   void _onSignupFormSaved() {
     if (_signupFormKey.currentState.validate()) {
       _signupFormKey.currentState.save();
@@ -304,7 +313,7 @@ class _GreyLoginSystemState extends State<GreyLoginSystem> {
 typedef Validator = void Function(String value);
 
 /// Defines the action to be taken when signInButton is pressed.
-typedef OnLoginPressed = void Function(String email, String password);
+typedef OnSignInPressed = void Function(String email, String password);
 
 /// Defines the action to be taken when signUpButton is pressed.
 typedef OnSubmitPressed = void Function(

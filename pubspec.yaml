@@ -1,7 +1,7 @@
 name: login_systems
 description: A new Flutter package project.
-version: 0.0.1
-homepage: https://github.com/imujtaba8488/package_login_systems
+version: 1.0.0
+homepage: https://twitter.com/imujtaba8488
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
