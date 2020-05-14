@@ -21,7 +21,7 @@ class GreyLoginSystem extends StatefulWidget {
       signUpHeaderLabel;
 
   GreyLoginSystem({
-    this.onSignInPressed,  
+    this.onSignInPressed,
     this.onSubmitPressed,
     this.onLinkPressed,
     this.emailValidator,
@@ -47,7 +47,7 @@ class _GreyLoginSystemState extends State<GreyLoginSystem> {
 
   @override
   Widget build(BuildContext context) {
-    // 60px for any additional padding. 
+    // 60px for any additional padding.
     _formHeight = MediaQuery.of(context).size.height - (_tabBarHeight + 60);
 
     // 2.5 takes into consideration any padding as well.
