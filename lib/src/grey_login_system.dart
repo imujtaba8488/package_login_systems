@@ -21,7 +21,7 @@ class GreyLoginSystem extends StatefulWidget {
       signUpHeaderLabel;
 
   GreyLoginSystem({
-    this.onSignInPressed,
+    this.onSignInPressed,  
     this.onSubmitPressed,
     this.onLinkPressed,
     this.emailValidator,
@@ -102,6 +102,7 @@ class _GreyLoginSystemState extends State<GreyLoginSystem> {
     );
   }
 
+  /// Returns the sign-in form.
   Widget _signInForm() {
     return Form(
       key: _signInFormKey,
@@ -136,6 +137,7 @@ class _GreyLoginSystemState extends State<GreyLoginSystem> {
     );
   }
 
+  /// Returns the sign-up form.
   Widget _signUpForm() {
     return Form(
       key: _signupFormKey,
@@ -189,6 +191,7 @@ class _GreyLoginSystemState extends State<GreyLoginSystem> {
     );
   }
 
+  /// Returns a customized tab.
   Widget _customizedTab(String label) {
     return Text(
       label,
@@ -196,7 +199,7 @@ class _GreyLoginSystemState extends State<GreyLoginSystem> {
     );
   }
 
-  // Returns the label to be displayed along the top of the page.
+  /// Returns the label to be displayed along the top of the page.
   Widget _headerLabel(String text, {double topPadding = 40.0}) {
     return Padding(
       padding: EdgeInsets.only(
@@ -216,6 +219,7 @@ class _GreyLoginSystemState extends State<GreyLoginSystem> {
     );
   }
 
+  /// Returns a customized TextFormField.
   Widget _customizedTextFormField(
     String label, {
     double width,
@@ -249,6 +253,7 @@ class _GreyLoginSystemState extends State<GreyLoginSystem> {
     );
   }
 
+  /// Returns a customized Raised Button.
   Widget _customizedRaisedButton({@required String text, Function onPressed}) {
     return InkWell(
       onTap: onPressed,
@@ -272,6 +277,7 @@ class _GreyLoginSystemState extends State<GreyLoginSystem> {
     );
   }
 
+  /// Returns a customized link button, sought of like a FlatButton.
   Widget _customizedLinkButton({@required String text, @required onPressed}) {
     return InkWell(
       onTap: onPressed,
