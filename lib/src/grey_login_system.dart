@@ -116,6 +116,7 @@ class _GreyLoginSystemState extends State<GreyLoginSystem> {
               suffixIcon: Icon(Icons.email),
               validator: widget.emailValidator,
               onSaved: (String value) => _email = value,
+              textInputType: TextInputType.emailAddress,
             ),
             _customizedTextFormField(
               'Password',
@@ -174,6 +175,7 @@ class _GreyLoginSystemState extends State<GreyLoginSystem> {
               suffixIcon: Icon(Icons.email),
               validator: widget.emailValidator,
               onSaved: (String value) => _email = value,
+              textInputType: TextInputType.emailAddress,
             ),
             _customizedTextFormField(
               'Password',
@@ -227,6 +229,7 @@ class _GreyLoginSystemState extends State<GreyLoginSystem> {
     EdgeInsets padding,
     Function validator,
     Function onSaved,
+    TextInputType textInputType,
   }) {
     return Container(
       padding: padding ??
@@ -236,6 +239,7 @@ class _GreyLoginSystemState extends State<GreyLoginSystem> {
           ),
       width: width,
       child: TextFormField(
+        keyboardType: textInputType,
         decoration: InputDecoration(
           labelText: label,
           labelStyle: TextStyle(
