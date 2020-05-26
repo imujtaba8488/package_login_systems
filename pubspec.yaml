@@ -1,6 +1,6 @@
 name: login_systems
 description: A collection of login systems ready to be used in any app, currently focussing on mobile application IOS and Android. More on the way!
-version: 1.0.1
+version: 1.0.2
 homepage: https://twitter.com/imujtaba8488
 
 environment:
