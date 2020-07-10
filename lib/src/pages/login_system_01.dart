@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../forms/sign_in_form.dart';
-import '../forms/sign_up_form.dart';
-import '../type_defs.dart';
+import '../forms/sign_in_form_01.dart';
+import '../forms/sign_up_form_01.dart';
+import '../global.dart';
 
 class LoginSystem01 extends StatelessWidget {
   final Validator emailValidator, passwordValidator;
@@ -76,7 +76,7 @@ class LoginSystem01 extends StatelessWidget {
                   height: _formHeight,
                   child: TabBarView(
                     children: <Widget>[
-                      SignInForm(
+                      SignInForm01(
                         headerText: signInHeaderText,
                         signInButtonLabel: signInButtonLabel,
                         emailValidator: emailValidator,
@@ -85,7 +85,7 @@ class LoginSystem01 extends StatelessWidget {
                         onSignInButtonPressed: onSignInButtonPressed,
                         onLinkPressed: onLinkPressed,
                       ),
-                      SignUpForm(
+                      SignUpForm01(
                         headerText: signUpHeaderText,
                         submitButtonLabel: submitButtonLabel,
                         emailValidator: emailValidator,

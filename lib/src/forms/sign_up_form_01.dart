@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 
-import '../widgets/customized_text_form_field.dart';
-import '../widgets/customized_raised_button.dart';
+import '../widgets/text_form_field_01.dart';
+import '../widgets/raised_button_01.dart';
 import '../widgets/header.dart';
-import '../type_defs.dart';
+import '../global.dart';
 
-class SignUpForm extends StatefulWidget {
+class SignUpForm01 extends StatefulWidget {
   final Text headerText, submitButtonLabel;
   final Validator emailValidator, passwordValidator;
   final OnSubmitPressed onSubmitPressed;
 
-  SignUpForm({
+  SignUpForm01({
     this.submitButtonLabel = const Text('Submit'),
     this.headerText = const Text('Sign Up!'),
     this.emailValidator,
@@ -19,10 +19,10 @@ class SignUpForm extends StatefulWidget {
   });
 
   @override
-  _SignUpFormState createState() => _SignUpFormState();
+  _SignUpForm01State createState() => _SignUpForm01State();
 }
 
-class _SignUpFormState extends State<SignUpForm> {
+class _SignUpForm01State extends State<SignUpForm01> {
   GlobalKey<FormState> _signUpFormKey = GlobalKey<FormState>();
 
   String _firstName, _lastName, _email, _password;
@@ -49,13 +49,13 @@ class _SignUpFormState extends State<SignUpForm> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
-                  CustomizedTextFormField(
+                  TextFormField01(
                     label: 'First Name',
                     width: _nameFieldWidth,
                     padding: EdgeInsets.all(0.0),
                     onSaved: (String value) => _firstName = value,
                   ),
-                  CustomizedTextFormField(
+                  TextFormField01(
                     label: 'Last Name',
                     width: _nameFieldWidth,
                     padding: EdgeInsets.all(0.0),
@@ -64,21 +64,21 @@ class _SignUpFormState extends State<SignUpForm> {
                 ],
               ),
             ),
-            CustomizedTextFormField(
+            TextFormField01(
               label: 'Email',
               suffixIcon: Icon(Icons.email),
               validator: widget.emailValidator,
               onSaved: (String value) => _email = value,
               textInputType: TextInputType.emailAddress,
             ),
-            CustomizedTextFormField(
+            TextFormField01(
               label: 'Password',
               suffixIcon: Icon(Icons.lock),
               validator: widget.passwordValidator,
               onSaved: (String value) => _password = value,
               obscureText: true,
             ),
-            CustomizedRaisedButton(
+            RaisedButton01(
               text: widget.submitButtonLabel,
               onPressed: _onSignUpFormSaved,
             ),

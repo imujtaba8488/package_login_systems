@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class CustomizedTextFormField extends StatelessWidget {
+class TextFormField01 extends StatelessWidget {
   final String label;
   final double width;
   final Icon suffixIcon;
@@ -10,7 +10,7 @@ class CustomizedTextFormField extends StatelessWidget {
   final TextInputType textInputType;
   final bool obscureText;
 
-  CustomizedTextFormField({
+  TextFormField01({
     this.label,
     this.width,
     this.suffixIcon,

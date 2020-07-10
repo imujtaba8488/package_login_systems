@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 
-import '../widgets/customized_text_form_field.dart';
-import '../widgets/customized_raised_button.dart';
+import '../widgets/text_form_field_01.dart';
+import '../widgets/raised_button_01.dart';
 import '../widgets/header.dart';
-import '../widgets/customized_link_button.dart';
-import '../type_defs.dart';
+import '../widgets/link_button_01.dart';
+import '../global.dart';
 
-class SignInForm extends StatefulWidget {
+class SignInForm01 extends StatefulWidget {
   final Text headerText, signInButtonLabel, linkLabel;
   final Validator emailValidator, passwordValidator;
   final OnSignInButtonPressed onSignInButtonPressed;
   final Function onLinkPressed;
 
-  SignInForm({
+  SignInForm01({
     this.headerText = const Text('Welcome Back!'),
     this.signInButtonLabel = const Text('Sign In'),
     this.linkLabel = const Text('Forgot Password?'),
@@ -23,10 +23,10 @@ class SignInForm extends StatefulWidget {
   });
 
   @override
-  _SignInFormState createState() => _SignInFormState();
+  _SignInForm01State createState() => _SignInForm01State();
 }
 
-class _SignInFormState extends State<SignInForm> {
+class _SignInForm01State extends State<SignInForm01> {
   GlobalKey<FormState> _signInFormKey = GlobalKey<FormState>();
 
   String _email, _password;
@@ -40,25 +40,25 @@ class _SignInFormState extends State<SignInForm> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Header(text: widget.headerText),
-            CustomizedTextFormField(
+            TextFormField01(
               label: 'Email',
               suffixIcon: Icon(Icons.email),
               validator: widget.emailValidator,
               onSaved: (String value) => _email = value,
               textInputType: TextInputType.emailAddress,
             ),
-            CustomizedTextFormField(
+            TextFormField01(
               label: 'Password',
               suffixIcon: Icon(Icons.lock),
               validator: widget.passwordValidator,
               onSaved: (String value) => _password = value,
               obscureText: true,
             ),
-            CustomizedRaisedButton(
+            RaisedButton01(
               text: widget.signInButtonLabel,
               onPressed: _onSignInFormSaved,
             ),
-            CustomizedLinkButton(
+            LinkButton01(
               text: widget.linkLabel,
               onPressed: widget.onLinkPressed,
             ),

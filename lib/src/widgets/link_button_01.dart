@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-class CustomizedLinkButton extends StatelessWidget {
+class LinkButton01 extends StatelessWidget {
   final Text text;
   final Function onPressed;
 
-  CustomizedLinkButton({
+  LinkButton01({
     this.text = const Text('Forgot Password'),
     this.onPressed,
   });

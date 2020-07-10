@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-class CustomizedRaisedButton extends StatelessWidget {
+class RaisedButton01 extends StatelessWidget {
   final Text text;
   final Function onPressed;
 
-  CustomizedRaisedButton({this.text, this.onPressed});
+  RaisedButton01({this.text, this.onPressed});
 
   @override
   Widget build(BuildContext context) {
