@@ -1,5 +1,12 @@
-
 # ChangeLog
+
+## 1.0.3
+
+### Friday, 10th July, 2020
+
+* Added the LoginSystem02.
+* Improved on the Example, esp; by the request of __Mr. Shoghi Effendi Amoakwah__. Thanks for his feedback.
+* Documentation improvements.
 
 ## 1.0.2
 
